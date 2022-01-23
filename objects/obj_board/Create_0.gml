@@ -2,6 +2,12 @@ randomize()
 x = 0
 y = 0
 
+enum states {
+  waiting,
+  moving
+}
+state = states.waiting // 0 - "waiting", 1 - "moving"
+
 function createPiece(i) {
   var xpos = x + (i % 3) * 200
   var ypos = y + int64(i / 3) * 200
@@ -98,6 +104,7 @@ function randozimeBoard() {
   }
 }
 
+// variables
 board = [
   createPiece(0),
   createPiece(1),
@@ -109,5 +116,8 @@ board = [
   createPiece(7),
   createPiece(8)
 ]
+
+movingPiece1 = pointer_null
+movingPiece2 = pointer_null
 
 randozimeBoard()
